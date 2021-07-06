@@ -1,0 +1,300 @@
+/* Global Styles */
+:root {
+    --green: #59981A;
+    --yellow-green: #ECF87F;
+    --lime-green: #81B622;
+    --olive-green: #3D550C;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 93.75%;
+}
+
+body {
+    background: #f2f2f2;
+    font-family: 'Lato', sans-serif;
+}
+
+/* Hidden Styles */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Links & Buttons Styles */
+
+a {
+    color: var(--olive-green);
+    text-decoration: none;
+}
+
+a:hover {
+    opacity: .8;
+}
+
+.button.new {
+    display: inline-block;
+    margin-bottom: .8rem;
+}
+
+button {
+    width: 100%;
+    height: 50px;
+    border: none;
+    color: #fff;
+    background: var(--green);
+    padding: 0;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--lime-green);
+}
+
+.button.cancel {
+    color: red;
+    border: 2px red solid;
+    border-radius: .5rem;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: .6;
+}
+
+.button.cancel:hover {
+    opacity: 1;
+}
+
+
+/* Header Styles */
+
+#logo {
+    color: #fff;
+    font-weight: 100;
+}
+
+#logo:hover {
+    transform: scale(1.1);
+    transition: 250ms;
+}
+
+h2 {
+    margin-top: 3.2rem;
+    margin-bottom: 0.8rem;
+    color: var(--olive-green);
+    font-weight: 400;
+}
+
+header {
+    background: linear-gradient(to bottom right,var(--olive-green),var(--lime-green));
+    padding: 2rem 0 10rem;
+    text-align: center;
+}
+
+/* Body Styles */
+
+.container {
+    width: min(90vw, 800px);
+    margin: auto;
+}
+
+#balance {
+    margin-top: -8rem;
+}
+
+#balance h2 {
+    color: #fff;
+    margin-top: 0;
+}
+
+.card {
+    background: #fff;
+    padding: 2rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: .25rem;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    transition: 250ms ease-in-out;
+}
+
+.card h3 {
+    font-weight: 400;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card p {
+    font-size: 2rem;
+    line-height: 3rem;
+    margin-top: 1rem;
+}
+
+.card.total {
+    background: var(--green);
+    color: #fff;
+}
+
+#transactions {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* Table Styles */
+
+#data-table {
+    width: 100%;
+    border-spacing: 0 .5rem;
+    color: #969cb3;
+}
+
+table thead tr th:first-child,
+table tbody tr td:first-child {
+    border-radius: .5rem 0 0 .5rem;
+}
+
+table thead tr th:last-child,
+table tbody tr td:last-child {
+    border-radius: 0 .5rem .5rem 0;
+}
+
+table th {
+    background: #fff;
+    font-weight: 400;
+    padding: 1rem 2rem;
+    text-align: left;
+    color: var(--olive-green);
+}
+
+table td {
+    background: #fff;
+    padding: 1rem 2rem;
+}
+
+table tbody tr {
+    opacity: .7;
+}
+
+table tbody tr:hover {
+    opacity: 1;
+    transition: 350ms ease-in-out;
+}
+
+td.description {
+    color: #000;
+}
+
+td.income {
+    color: green;
+}
+
+td.expense {
+    color: red;
+}
+
+/* Modal Styles */
+
+.modal-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    background: #F0F2f5;
+    padding: 2.4rem;
+    border-radius: .5rem;
+    margin-top: -5rem;
+}
+
+#form {
+    max-width: 500px;
+}
+
+#form h2 {
+    margin-top: 0;
+}
+
+#form form input {
+    border: none;
+    border-radius: 0.2rem;
+    padding: 0.8rem;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.input-group {
+    margin-top: .8rem;
+}
+
+.input-group small {
+    opacity: .4;
+}
+
+.input-group.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-group.actions .button,
+.input-group.actions button {
+    width: 48%;
+}
+
+/* Footer Styles */
+
+footer {
+    text-align: center;
+    padding: 4rem 0 2rem;
+    color: #969cb3;
+    opacity: .8;
+}
+
+footer:hover {
+    opacity: 1;
+}
+
+/* Responsiveness */
+@media (min-width: 800px) {
+    html {
+        font-size: 87.5%;
+    }
+    #balance {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
+    }
+}
