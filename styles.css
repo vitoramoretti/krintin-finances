@@ -128,6 +128,7 @@ header {
     padding: 2rem 1rem;
     margin-bottom: 1rem;
     border-radius: .25rem;
+    transition: 250ms ease-in-out;
 }
 
 .card:hover {

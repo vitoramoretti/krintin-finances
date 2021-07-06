@@ -7,6 +7,12 @@ const Modal = {
   }
 };
 
+// Sound Effect
+const chingBtn = document.querySelector('.ching');
+let chingSound = document.querySelector('#ching');
+chingBtn.addEventListener('click' , () => {
+    chingSound.play();
+})
 
 // Storage
 const Storage = {
