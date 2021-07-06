@@ -4,8 +4,9 @@ const Modal = {
   },
   close() {
     document.querySelector(".modal-overlay").classList.remove("active");
-  },
+  }
 };
+
 
 // Storage
 const Storage = {
@@ -55,6 +56,9 @@ const Transaction = {
     },
 
     total() {
+        if(Transaction.incomes() + Transaction.expenses() < 0) {
+            document.querySelector(".card.total").classList.add("negative")
+        } else document.querySelector(".card.total").classList.remove("negative")
         return Transaction.incomes() + Transaction.expenses();
     }
 }

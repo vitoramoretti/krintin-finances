@@ -132,6 +132,7 @@ header {
 
 .card:hover {
     transform: scale(1.1);
+    box-shadow: 0rem 0rem .5rem rgba(0, 0, 0, 0.5);
     transition: 250ms ease-in-out;
 }
 
@@ -151,6 +152,11 @@ header {
 
 .card.total {
     background: var(--green);
+    color: #fff;
+}
+
+.card.total.negative {
+    background: rgb(190, 0, 0);
     color: #fff;
 }
 
