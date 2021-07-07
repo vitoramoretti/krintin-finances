@@ -14,6 +14,37 @@ chingBtn.addEventListener('click' , () => {
     chingSound.play();
 })
 
+// Dark Theme
+if (localStorage.getItem('isDarkTheme') === 'true') {
+    document.querySelector('.toggle-theme').classList.remove("light")
+    document.querySelector('.toggle-theme').classList.add("dark")
+    document.querySelector('header').classList.add('dark')
+    document.querySelector('.card.total').classList.add('dark')
+    document.body.classList.add('dark')
+}
+const themeToggle = document.querySelector('#swtichBtn')
+
+themeToggle.addEventListener('click', () => {
+    document.querySelector('.toggle-theme').classList.contains('light') ? enableDarkMode() : enableLightMode()
+})
+
+function enableDarkMode() {
+    document.querySelector('.toggle-theme').classList.remove("light")
+    document.querySelector('.toggle-theme').classList.add("dark")
+    document.querySelector('header').classList.add('dark')
+    document.querySelector('.card.total').classList.add('dark')
+    document.body.classList.add('dark')
+    localStorage.setItem('isDarkTheme', true);
+}
+
+function enableLightMode() {
+    document.querySelector('.toggle-theme').classList.remove("dark")
+    document.querySelector('.toggle-theme').classList.add("light")
+    document.querySelector('header').classList.remove('dark')
+    document.querySelector('.card.total').classList.remove('dark')
+    document.body.classList.remove('dark')
+    localStorage.setItem('isDarkTheme', false);
+}
 // Storage
 const Storage = {
     get() {

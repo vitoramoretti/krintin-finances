@@ -4,6 +4,7 @@
     --yellow-green: #ECF87F;
     --lime-green: #81B622;
     --olive-green: #3D550C;
+    --background: #f2f2f2
 
 }
 
@@ -13,13 +14,55 @@
     box-sizing: border-box;
 }
 
+@media (prefers-color-scheme: dark) {
+    body {
+        background: rgb(22, 22, 22);
+    }
+}
+
 html {
     font-size: 93.75%;
 }
 
 body {
-    background: #f2f2f2;
+    background: var(--background);
     font-family: 'Lato', sans-serif;
+    transition: 250ms ease-in-out;
+}
+/* Dark Theme */
+body.dark {
+    background: rgb(22, 22, 22);
+    transition: 250ms ease-in-out;
+}
+
+body.dark a {
+    color: #75798b;
+}
+
+body.dark .card,
+body.dark table th, table td {
+    background: #abaeb9;
+}
+
+header.dark {
+    background: linear-gradient(to bottom right, rgb(30, 30, 100) ,#969cb3);
+    transition: 250ms ease-in-out;
+}
+/* Theme Toggle Button */
+.toggle-theme {
+    padding-top: 1rem;
+    opacity: .7;
+    max-width: max-content;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transition: 150ms ease-out;
+}
+
+.toggle-theme:hover {
+    transform: rotateY(0.5turn);
+    transition: 150ms ease-out;
+    opacity: 1;
 }
 
 /* Hidden Styles */
@@ -84,14 +127,21 @@ button:hover {
 
 /* Header Styles */
 
+@keyframes logo {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
 #logo {
     color: #fff;
     font-weight: 100;
+    animation-name: logo;
+    animation-duration: 800ms;
 }
 
 #logo:hover {
     transform: scale(1.1);
-    transition: 250ms;
+    transition: 250ms ease-out;
 }
 
 h2 {
@@ -105,6 +155,7 @@ header {
     background: linear-gradient(to bottom right,var(--olive-green),var(--lime-green));
     padding: 2rem 0 10rem;
     text-align: center;
+    transition: 250ms ease-in-out;
 }
 
 /* Body Styles */
@@ -154,6 +205,10 @@ header {
 .card.total {
     background: var(--green);
     color: #fff;
+}
+
+.card.total.dark {
+    background: #75798b;
 }
 
 .card.total.negative {
