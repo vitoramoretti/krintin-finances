@@ -20,6 +20,7 @@ if (localStorage.getItem('isDarkTheme') === 'true') {
     document.querySelector('.toggle-theme').classList.add("dark")
     document.querySelector('header').classList.add('dark')
     document.querySelector('.card.total').classList.add('dark')
+    document.querySelector('.modal').classList.add('dark')
     document.body.classList.add('dark')
 }
 const themeToggle = document.querySelector('#swtichBtn')
@@ -33,6 +34,7 @@ function enableDarkMode() {
     document.querySelector('.toggle-theme').classList.add("dark")
     document.querySelector('header').classList.add('dark')
     document.querySelector('.card.total').classList.add('dark')
+    document.querySelector('.modal').classList.add('dark')
     document.body.classList.add('dark')
     localStorage.setItem('isDarkTheme', true);
 }
@@ -42,6 +44,7 @@ function enableLightMode() {
     document.querySelector('.toggle-theme').classList.add("light")
     document.querySelector('header').classList.remove('dark')
     document.querySelector('.card.total').classList.remove('dark')
+    document.querySelector('.modal').classList.remove('dark')
     document.body.classList.remove('dark')
     localStorage.setItem('isDarkTheme', false);
 }

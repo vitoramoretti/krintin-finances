@@ -14,11 +14,6 @@
     box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-    body {
-        background: rgb(22, 22, 22);
-    }
-}
 
 html {
     font-size: 93.75%;
@@ -47,6 +42,18 @@ body.dark table th, table td {
 header.dark {
     background: linear-gradient(to bottom right, rgb(30, 30, 100) ,#969cb3);
     transition: 250ms ease-in-out;
+}
+
+.modal.dark {
+    background: #a3a4a8;
+}
+
+.modal.dark h2, ::placeholder {
+    color: rgb(26, 26, 26);
+}
+
+.modal.dark input {
+    background: #80838f;
 }
 /* Theme Toggle Button */
 .toggle-theme {
