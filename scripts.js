@@ -48,6 +48,7 @@ function enableLightMode() {
     document.body.classList.remove('dark')
     localStorage.setItem('isDarkTheme', false);
 }
+
 // Storage
 const Storage = {
     get() {
@@ -242,10 +243,3 @@ const App = {
 }
 
 App.init()
-
-// Transaction.add( {
-//     id: 5,
-//     description: "kakaka",
-//     amount: 150,
-//     date: "23/02/2021"
-// })
